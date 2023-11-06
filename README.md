@@ -1,28 +1,40 @@
-# PruebaTecnicaDevsu
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+## REPOSITORIO GITHUB: 
 
-## Development server
+`https://github.com/kfabianparedes/prueba-tecnica-devsu`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Prueba Tecnica Devsu : KEVIN FABIAN
 
-## Code scaffolding
+Este proyecto ha sido creado en Angular version 14.2.6.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Levantar proyecto localmente
 
-## Build
+1. Una vez clonado el proyecto escribir el comando `npm install` para instalar todas las dependencias
+2. Luego de instalar las dependencias, escribir el comando `ng serve` para levantar el proyecto localmente. Ingresar a la siguiente url:  `http://localhost:4200/`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Visualizar respuesta de pruebas unitarias
+Si desea ver las pruebas unitarias escribir el comando `npm run test:watch` para ver las pruebas mientras se hacen cambios en el código o `npm run test` si solo desea ver el resultado.
 
-## Running unit tests
+---
+# Funcionalidades realizadas: F1 - F2 - F3 - F4
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## BUSCAR PRODUCTO
+![Alt text](image.png)
+---
+![Alt text](image-limite.png)
+---
+![Alt text](image-filtro.png)
 
-## Running end-to-end tests
+## REGISTRAR PRODUCTO
+![Alt text](image-registro.png)
+---
+![Alt text](image-registro-validaciones.png)
+Cuenta con las validaciones del item para cada campo , incluso la validación que es con el servicio.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## PRUEBAS UNITARIAS
+![Alt text](image-pruebas-unitarias.png)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# prueba-tecnica-devsu
+# Por falta de tiempo no se pudo realizar: (Pero lo haré en el repositorio igualmente)
+## 1. F5 , F6
+## 2. Diseño responsive
+## 3. Skeleton design

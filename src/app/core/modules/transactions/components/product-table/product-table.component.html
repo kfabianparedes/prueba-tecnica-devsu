@@ -1,0 +1,21 @@
+<div class="table-container">
+  <table class="table-container__content">
+    <tr class="table-container__content_header">
+      <th class="content-header-th content-header--center">Logo</th>
+      <th class="content-header-th">Nombre de producto</th>
+      <th class="content-header-th">Descripción</th>
+      <th class="content-header-th">Fecha de liberación</th>
+      <th class="content-header-th">Fecha de reestructuración</th>
+      <th class="content-header-th"></th>
+    </tr>
+    <tr class="table-container__content_body" *ngFor="let product of products | filterTable: searchText">
+      <td class="content-body-td content-body--center"> <img class="logo-img" src="{{product?.logo}}" alt="product-logo"> </td>
+      <td class="content-body-td">{{ product?.name }}</td>
+      <td class="content-body-td">{{ product?.description }}</td>
+      <td class="content-body-td">{{ product?.date_release | date:'dd/MM/yyyy' }}</td>
+      <td class="content-body-td">{{ product?.date_revision | date:'dd/MM/yyyy' }}</td>
+      <td class="content-body-td content-body-td--options"> &#8942;</td>
+    </tr>
+  </table>
+
+</div>

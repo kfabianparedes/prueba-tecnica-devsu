@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url('assets/fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: Montserrat-Medium;
+  src: url('assets/fonts/Montserrat-Medium.ttf');
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('assets/fonts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+  font-family: Montserrat-ExtraBold;
+  src: url('assets/fonts/Montserrat-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: Montserrat-SemiBold;
+  src: url('assets/fonts/Montserrat-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: Montserrat-Thin;
+  src: url('assets/fonts/Montserrat-Thin.ttf');
+}
+
+@font-face {
+  font-family: Montserrat-Light;
+  src: url('assets/fonts/Montserrat-Light.ttf');
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;  /* 1REM = 10px */
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+:root {
+  --bs-font-montserrat: Montserrat-Regular ,sans-serif;
+  --bs-body-font-family: var(--bs-font-montserrat);
+  --bs-body-font-size: 2rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 2;
+  --bs-body-color: #212529;
+  --bs-body-bg: #f4f4f4;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: var(--bs-body-font-family);
+  font-size: var(--bs-body-font-size);
+  font-weight: var(--bs-body-font-weight);
+  line-height: var(--bs-body-line-height);
+  color: var(--bs-body-color);
+  text-align: var(--bs-body-text-align);
+  background-color: var(--bs-body-bg);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  
+  
+}

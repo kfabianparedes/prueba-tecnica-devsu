@@ -21,7 +21,16 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "types": [
+      "jest"
+    ],
+    "paths": {
+      "@shared/*": [
+        "src/app/shared/*"
+      ]
+    },
+    "esModuleInterop": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

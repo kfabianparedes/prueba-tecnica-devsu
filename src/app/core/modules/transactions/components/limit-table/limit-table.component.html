@@ -1,0 +1,13 @@
+<div class="container-limit">
+  <div class="container-list__count">
+    {{ countElements }} Resultados
+  </div>
+  <div class="container-list__options-container">
+    <select class="options-container__select" (change)="onQuantityChange($event)">
+      <option [value]="optionsQuantity.low">{{optionsQuantity.low}}</option>
+      <option [value]="optionsQuantity.medium">{{optionsQuantity.medium}}</option>
+      <option [value]="optionsQuantity.high">{{optionsQuantity.high}}</option>
+      <option [value]="optionsQuantity.all">{{optionsQuantity.all}}</option>
+    </select>
+  </div>
+</div>

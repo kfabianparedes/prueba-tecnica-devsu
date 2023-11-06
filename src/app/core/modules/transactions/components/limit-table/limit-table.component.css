@@ -1,0 +1,20 @@
+.container-limit {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between; /* Esto alineará los elementos a los extremos opuestos */
+  background-color: #ffffff;
+}
+
+.container-list__count{
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.options-container__select{
+  padding: 1rem 2rem;
+  width: 100%;
+  font-size: 2rem;
+  height: auto;
+  border: 0.1rem solid #cccccc;
+  border-radius: 0.3rem;
+}

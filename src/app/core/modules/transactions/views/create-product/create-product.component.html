@@ -1,0 +1,57 @@
+<div class="register-container">
+  <div class="register-container__header">
+    <h2 class="register-container__title">Formulario de Registro</h2>
+    <hr class="register-container__separator">
+  </div>
+  <div class="register-container__form">
+    <form class="register-form" [formGroup]="productFormService.form" (ngSubmit)="saveProduct()">
+      <div class="register-form__row">
+        <div class="register-form__group">
+          <label class="register-form__label" for="id">ID:</label>
+          <input class="register-form__input" [ngClass]="{'register-form__input--error':productFormService.idControl.error}" type="text" id="id" name="id" formControlName="id">
+          <span class="register-form__error-message">{{productFormService.idControl.identificatorMessageError}}</span>
+        </div>
+        <div class="register-form__group">
+          <label class="register-form__label" for="nombre">Nombre:</label>
+          <input class="register-form__input" [ngClass]="{'register-form__input--error':productFormService.nameControl.error}" type="text" id="name" name="name" formControlName="name">
+          <span class="register-form__error-message">{{productFormService.nameControl.nameMessageError}}</span>
+        </div>
+      </div>
+  
+      <div class="register-form__row">
+        <div class="register-form__group">
+          <label class="register-form__label" for="descripcion">Descripción:</label>
+          <input class="register-form__input" [ngClass]="{'register-form__input--error':productFormService.descriptionControl.error}" type="text" id="descripcion" name="descripcion" formControlName="description">
+          <span class="register-form__error-message">{{productFormService.descriptionControl.descriptionMessageError}}</span>
+        </div>
+        <div class="register-form__group">
+          <label class="register-form__label" for="logo">Logo:</label>
+          <input class="register-form__input" [ngClass]="{'register-form__input--error':productFormService.logoControl.error}" type="text" id="logo" name="logo" formControlName="logo">
+          <span class="register-form__error-message">{{productFormService.logoControl.logoMessageError}}</span>
+        </div>
+      </div>
+  
+      <div class="register-form__row">
+        <div class="register-form__group">
+          <label class="register-form__label" for="releaseDate">Fecha de Liberación:</label>
+          <input class="register-form__input" [ngClass]="{'register-form__input--error':productFormService.dateReleaseControl.error}" type="date" id="releaseDate" name="releaseDate" formControlName="date_release">
+          <span class="register-form__error-message">{{productFormService.dateReleaseControl.dateReleaseMessageError}}</span>
+        </div>
+        <div class="register-form__group">
+          <label class="register-form__label" for="revisionDate">Fecha de Revisión:</label>
+          <input class="register-form__input" [ngClass]="{'register-form__input--error':productFormService.dateRevisionControl.error}" type="date" id="revisionDate" name="revisionDate" formControlName="date_revision">
+          <span class="register-form__error-message">{{productFormService.dateRevisionControl.dateRevisionMessageError}}</span>
+        </div>
+      </div>
+
+      <div class="register-container__row">
+        <div class="register-container__footer">
+          <button class="register-form__reset" type="button" (click)="resetForm()">Reiniciar</button>
+          <button class="register-form__submit" type="submit" [disabled]="productFormService.form.invalid">Enviar</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  
+</div>

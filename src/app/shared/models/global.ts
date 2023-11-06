@@ -1,0 +1,25 @@
+export enum QUANTITY_OPTIONS {
+  low = 5,
+  medium = 10,
+  high = 20,
+  all = 100
+}
+
+export const HTTP_HEADERS = {
+  authorId : "100"
+}
+
+export enum HTTP_ERROR_RESPONSE_STATUS {
+  UNAUTHORIZED = 401,
+  UPDATE_USER_INFO = 417, 
+  INTENAL_ERROR = 500,
+}
+
+export enum CONFIG_PRODUCT_VALIDATIONS {
+  MIN_LENGHT_ID = 3,
+  MAX_LENGHT_ID = 10,
+  MIN_LENGHT_NAME = 5,
+  MAX_LENGHT_NAME = 100,
+  MIN_LENGHT_DESCRIPTION = 5,
+  MAX_LENGHT_DESCRIPTION = 200,
+}

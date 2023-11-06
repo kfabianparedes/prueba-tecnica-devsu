@@ -1,0 +1,8 @@
+.container-transaction{
+  margin-top: 5rem;
+}
+.container-transaction__header,
+.container-transaction__content, 
+.container-transaction__footer{
+  padding: 0 25rem;
+}

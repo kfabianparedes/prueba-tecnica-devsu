@@ -1,0 +1,25 @@
+<div class="container-transaction">
+
+  <div class="container-transaction__header">
+    <header-table-search-create
+      (searchTextChanged)="searchProduct($event)"
+    >
+    </header-table-search-create>
+  </div>
+
+  <div class="container-transaction__content">
+    <product-table
+      [products]="displayedProducts"
+      [searchText]="searchProductByName"
+    ></product-table>
+  </div>
+  
+
+  <div class="container-transaction__footer">
+    <limit-table-component
+      [countElements]="products.length"
+      (quantitySelected)="displayProducts($event)"
+    ></limit-table-component>
+  </div>
+  
+</div>
