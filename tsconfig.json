@@ -25,11 +25,6 @@
     "types": [
       "jest"
     ],
-    "paths": {
-      "@shared/*": [
-        "src/app/shared/*"
-      ]
-    },
     "esModuleInterop": true
   },
   "angularCompilerOptions": {

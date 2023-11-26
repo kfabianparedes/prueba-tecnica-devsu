@@ -1,6 +1,10 @@
 <div class="register-container">
   <div class="register-container__header">
-    <h2 class="register-container__title">Formulario de Registro</h2>
+    <div class="register-container__title">
+      <span (click)="goBack()">&larr;</span>
+      <h2 *ngIf="!isUpdating">Formulario de Registro</h2>
+      <h2 *ngIf="isUpdating">Formulario de Actualización</h2>
+    </div>
     <hr class="register-container__separator">
   </div>
   <div class="register-container__form">
@@ -12,7 +16,7 @@
           <span class="register-form__error-message">{{productFormService.idControl.identificatorMessageError}}</span>
         </div>
         <div class="register-form__group">
-          <label class="register-form__label" for="nombre">Nombre:</label>
+          <label class="register-form__label" for="name">Nombre:</label>
           <input class="register-form__input" [ngClass]="{'register-form__input--error':productFormService.nameControl.error}" type="text" id="name" name="name" formControlName="name">
           <span class="register-form__error-message">{{productFormService.nameControl.nameMessageError}}</span>
         </div>
@@ -20,8 +24,8 @@
   
       <div class="register-form__row">
         <div class="register-form__group">
-          <label class="register-form__label" for="descripcion">Descripción:</label>
-          <input class="register-form__input" [ngClass]="{'register-form__input--error':productFormService.descriptionControl.error}" type="text" id="descripcion" name="descripcion" formControlName="description">
+          <label class="register-form__label" for="description">Descripción:</label>
+          <input class="register-form__input" [ngClass]="{'register-form__input--error':productFormService.descriptionControl.error}" type="text" id="description" name="description" formControlName="description">
           <span class="register-form__error-message">{{productFormService.descriptionControl.descriptionMessageError}}</span>
         </div>
         <div class="register-form__group">
@@ -46,8 +50,8 @@
 
       <div class="register-container__row">
         <div class="register-container__footer">
-          <button class="register-form__reset" type="button" (click)="resetForm()">Reiniciar</button>
-          <button class="register-form__submit" type="submit" [disabled]="productFormService.form.invalid">Enviar</button>
+          <button class="button-secondary" type="button" (click)="resetForm()">Reiniciar</button>
+          <button class="button-primary" type="submit" [disabled]="productFormService.form.invalid">Enviar</button>
         </div>
       </div>
 

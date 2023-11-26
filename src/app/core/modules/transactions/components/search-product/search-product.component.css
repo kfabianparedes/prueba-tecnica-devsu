@@ -13,24 +13,27 @@
   border: 0.1rem solid #cccccc;
   border-radius: 1rem;
   font-size: 2rem;
+  outline: none;
 }
 
-.search-product-container__button {
-  background-color: #ffdd00;
-  color: #0f265c;
-  padding: 2rem 4.5rem;
-  border: none;
-  border-radius: .5rem;
-  cursor: pointer;
-  font-size: 2rem;
-  font-family: Montserrat-SemiBold;
+@media only screen and (max-width: 767px) {
+  .search-product-container{
+    display: block;
+  }
 
-}
+  .search-product-container__find , .search-product-container__create {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+  
+  }
 
-.search-product-container__button:hover {
-  background-color: #ffcd39;
-}
+  .search-product-container__input{
+    padding: 2rem;
+    width: 100%;
+    height: 1rem;
+    font-size: 1.5rem;
+  }
 
-.search-product-container__button:disabled {
-  background-color: #ffe69d;
 }

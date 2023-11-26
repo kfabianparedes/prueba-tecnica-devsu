@@ -1,3 +1,4 @@
+import { formatDateString } from "../../../../shared/helpers/utils";
 import { isObject } from "../../../../shared/helpers/object-helper";
 
 export interface IProduct {
@@ -22,7 +23,7 @@ export class Product {
     this.name = currentValue.name || '';
     this.description = currentValue.description || '';
     this.logo = currentValue.logo || '';
-    this.date_release = currentValue.date_release || '';
-    this.date_revision = currentValue.date_revision || '';
+    this.date_release = currentValue.date_release ? formatDateString(currentValue.date_release) : '';
+    this.date_revision = currentValue.date_revision ? formatDateString(currentValue.date_revision) : ''
   }
 }

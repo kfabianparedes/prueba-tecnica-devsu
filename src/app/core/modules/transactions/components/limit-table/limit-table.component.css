@@ -1,7 +1,7 @@
 .container-limit {
   padding: 2rem;
   display: flex;
-  justify-content: space-between; /* Esto alineará los elementos a los extremos opuestos */
+  justify-content: space-between; 
   background-color: #ffffff;
 }
 

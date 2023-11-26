@@ -6,6 +6,7 @@ import { DescriptionControl } from '../../../../shared/controls/description-cont
 import { IdentificatorControl } from '../../../../shared/controls/id-control';
 import { LogoControl } from '../../../../shared/controls/logo-control';
 import { NameControl } from '../../../../shared/controls/name-control';
+import { Product } from '../models/product.model';
 
 @Injectable()
 export class ProductFormService {
@@ -60,6 +61,37 @@ export class ProductFormService {
     this.logoControl.setValue('');
     this.dateReleaseControl.setValue('');
     this.dateRevisionControl.setValue('');
+
+    this.idControl.markAsUntouched();
+    this.nameControl.markAsUntouched();
+    this.descriptionControl.markAsUntouched();
+    this.logoControl.markAsUntouched();
+    this.dateReleaseControl.markAsUntouched();
+    this.dateRevisionControl.markAsUntouched();
   }
-  
+
+  public resetUpdateForm(): void {
+    this.nameControl.setValue('');
+    this.descriptionControl.setValue('');
+    this.logoControl.setValue('');
+    this.dateReleaseControl.setValue('');
+    this.dateRevisionControl.setValue('');
+
+    this.nameControl.markAsUntouched();
+    this.descriptionControl.markAsUntouched();
+    this.logoControl.markAsUntouched();
+    this.dateReleaseControl.markAsUntouched();
+    this.dateRevisionControl.markAsUntouched();
+  }
+
+  public setProductValues(product: Product) {
+    this.form.patchValue({
+      id: product.id,
+      name: product.name,
+      description: product.description,
+      logo: product.logo,
+      date_release: product.date_release,
+      date_revision: product.date_revision  
+    });
+  }
 }

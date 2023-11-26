@@ -8,6 +8,8 @@ import { ProductTableComponent } from './components/product-table/product-table.
 import { LimitTableComponent } from './components/limit-table/limit-table.component';
 import { FilterTablePipe } from './pipes/filter-table.pipe';
 import { of } from 'rxjs';
+import { ProductFormService } from './services/product-form.service';
+import { FormBuilder } from '@angular/forms';
 
 describe('Pruebas en TransactionsComponent: ', () => {
   let component: TransactionsComponent;
@@ -25,7 +27,12 @@ describe('Pruebas en TransactionsComponent: ', () => {
         LimitTableComponent,
         FilterTablePipe 
       ],
-      providers:[ProductImplementService,ProductClientService]
+      providers:[
+        ProductImplementService,
+        ProductClientService,
+        ProductFormService,
+        FormBuilder
+      ]
     })
     .compileComponents();
 

@@ -2,28 +2,35 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CreateProductComponent } from './create-product.component';
 import { ProductImplementService } from '../../services/product-implement.service';
 import { ProductFormService } from '../../services/product-form.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { ProductClientService } from '../../../../services/product-client.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { IProduct, Product } from '../../models/product.model';
 import { of } from 'rxjs';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 describe('Pruebas en CreateProductComponent:', () => {
   let component: CreateProductComponent;
   let fixture: ComponentFixture<CreateProductComponent>;
   let httpTestingController: HttpTestingController;
-  let service: ProductClientService;
+  let service: ProductImplementService;
   let formService: ProductFormService;
   let router: Router
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientTestingModule,ReactiveFormsModule],
-      declarations: [ CreateProductComponent ],
-      providers:[
-        ProductImplementService, 
-        ProductClientService, 
+      imports: [HttpClientTestingModule, ReactiveFormsModule],
+      declarations: [CreateProductComponent],
+      providers: [
+        ProductImplementService,
+        ProductClientService,
         ProductFormService,
+        FormBuilder,
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            paramMap: of({ get: (key: string) => '123' }) // Puedes ajustar esto según tus necesidades de prueba
+          }
+        },
         {
           provide: Router,
           useValue: {
@@ -32,26 +39,24 @@ describe('Pruebas en CreateProductComponent:', () => {
         },
       ]
     })
-    .compileComponents();
-
+      .compileComponents();
   });
 
-  beforeEach(()=>{
+  beforeEach(() => {
     fixture = TestBed.createComponent(CreateProductComponent);
     httpTestingController = TestBed.inject(HttpTestingController);
-    service = TestBed.inject(ProductClientService);
+    service = TestBed.inject(ProductImplementService);
     formService = TestBed.inject(ProductFormService);
     router = TestBed.inject(Router);
     component = fixture.componentInstance;
     fixture.detectChanges();
-
   });
 
   afterEach(() => {
     httpTestingController.verify();
   });
 
-  test('Debería dejar crear el componente:', () => {
+  test('Debería crear el componente: CreateProductComponent', () => {
     expect(component).toBeTruthy();
   });
 
@@ -75,22 +80,24 @@ describe('Pruebas en CreateProductComponent:', () => {
     expect(formService.idControl.value).toBe('product-03');
     expect(formService.nameControl.value).toBe('Producto Tercera Parte');
     
-    jest.spyOn(service, 'validateProductID$').mockReturnValue(of(false));
-    jest.spyOn(service, 'createProduct$').mockReturnValue(of(product));
+    jest.spyOn(service, 'validateProductID').mockReturnValue(of(false));
+    jest.spyOn(service, 'createProduct').mockReturnValue(of(product));
     jest.spyOn(router, 'navigate');
 
-    component.saveProduct();
+    component.saveNewProduct(product);
 
-    expect(service.validateProductID$).toHaveBeenCalledWith('product-03');
-    expect(service.createProduct$).toHaveBeenCalledWith(product);
-    expect(router.navigate).toHaveBeenCalledWith(['home/create-product']);
+    expect(service.validateProductID).toHaveBeenCalledWith('product-03');
+    expect(service.createProduct).toHaveBeenCalledWith(product);
+    expect(router.navigate).toHaveBeenCalledWith(['home']);
   });
 
   test('Debería resetear el formulario', () => {
+    component.isUpdating = true;
     jest.spyOn(formService, 'resetForm');
+    jest.spyOn(formService, 'resetUpdateForm');
     component.resetForm();
-    expect(formService.resetForm).toHaveBeenCalled();
+    expect(formService.resetUpdateForm).toHaveBeenCalled();
+    expect(formService.resetForm).not.toHaveBeenCalled();
   });
-  
 
 });

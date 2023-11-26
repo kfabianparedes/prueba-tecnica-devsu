@@ -11,6 +11,8 @@ import { FilterTablePipe } from './pipes/filter-table.pipe';
 import { CreateProductComponent } from './views/create-product/create-product.component';
 import { ProductFormService } from './services/product-form.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../../../shared/shared.module';
+import { DeleteProductModalComponent } from './components/delete-product-modal/delete-product-modal.component';
 
 const SERVICES = [
   ProductImplementService,
@@ -26,13 +28,15 @@ const PIPES = [
     LimitTableComponent,
     SearchProductComponent,
     ...PIPES,
-    CreateProductComponent
+    CreateProductComponent,
+    DeleteProductModalComponent
   ],
   imports: [
     CommonModule,
     TransactionsRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule
   ],
   providers: [
     ...SERVICES

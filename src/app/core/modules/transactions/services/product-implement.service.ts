@@ -16,8 +16,8 @@ export class ProductImplementService {
     );
   }
 
-  public createProduct(prudct: Product): Observable<Product> {
-    return this.productClientService.createProduct$(prudct)
+  public createProduct(product: Product): Observable<Product> {
+    return this.productClientService.createProduct$(product)
     .pipe(
       map((product: ProductResponse) => new Product(product))
     );
@@ -25,5 +25,16 @@ export class ProductImplementService {
 
   public validateProductID(productID: string): Observable<boolean> {
     return this.productClientService.validateProductID$(productID);
+  }
+
+  public updateProduct(product: Product): Observable<Product> {
+    return this.productClientService.updateProduct$(product)
+    .pipe(
+      map((product: ProductResponse) => new Product(product))
+    );
+  }
+
+  public deleteProduct(param: string): Observable<string> {
+    return this.productClientService.deleteProduct$(param);
   }
 }

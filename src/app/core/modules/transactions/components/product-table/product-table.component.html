@@ -14,8 +14,21 @@
       <td class="content-body-td">{{ product?.description }}</td>
       <td class="content-body-td">{{ product?.date_release | date:'dd/MM/yyyy' }}</td>
       <td class="content-body-td">{{ product?.date_revision | date:'dd/MM/yyyy' }}</td>
-      <td class="content-body-td content-body-td--options"> &#8942;</td>
+      <td class="content-body-td">
+        <div class="content-body-td--options" (click)="toggleOptions(product.id)" (mouseenter)="toggleOptions(product.id)" (mouseleave)="hideOptions()">
+          <div class="options-trigger"><span>&#8942;</span></div>
+          <div class="options-container" *ngIf="selectedProductId === product.id && showToggleOptions">
+            <div (click)="updateProduct(product)">Actualizar</div>
+            <div (click)="deleteProduct(product)">Eliminar</div>
+          </div>
+        </div>
+      </td>
+      
+
     </tr>
+    
   </table>
 
 </div>
+
+<delete-product-modal (close)="closeModal()" [product]="productToDelete" *ngIf="modalService.modalOpen$ | async"></delete-product-modal>

@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { catchError, tap } from "rxjs/operators";
-import { Observable, of } from "rxjs";
+import { Observable } from "rxjs";
 import { GenericHeaderService } from "./generic-header.service";
 
 @Injectable({
@@ -29,21 +29,20 @@ export class GenericService {
 
   public genericPut<T>(endpoint: string, body: Object, params?: HttpParams): Observable<T> {
     const options = this.createRequestOptions(params);
-    
     return this.http.put<T>(endpoint, body, options).pipe(
       tap(_ => this.log(`Put ${endpoint}`)),
       catchError((error: any) => this.handleError<T>(`genericPut ${endpoint}`, error))
     );
   }
 
-  public genericDelete<T>(endpoint: string, params?: HttpParams): Observable<T> {
-    const options = this.createRequestOptions(params);
-    return this.http.delete<T>(endpoint, options).pipe(
+  public genericDelete<T>(endpoint: string, params?: HttpParams, responseType: 'json' | 'text' = 'json'): Observable<T> {
+    const requestOptions = this.createRequestOptions(params);
+    return this.http.delete<T>(endpoint, { ...requestOptions, responseType: responseType as any }).pipe(
       tap(_ => this.log(`Delete ${endpoint}`)),
       catchError((error: any) => this.handleError<T>(`genericDelete ${endpoint}`, error))
     );
   }
-  
+
   private createRequestOptions(params?: HttpParams, headers: HttpHeaders = this._genericHeaderService.getHeader()) {
     return { headers, params };
   }

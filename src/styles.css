@@ -42,27 +42,91 @@ html {
 }
 
 :root {
-  --bs-font-montserrat: Montserrat-Regular ,sans-serif;
-  --bs-body-font-family: var(--bs-font-montserrat);
-  --bs-body-font-size: 2rem;
-  --bs-body-font-weight: 400;
-  --bs-body-line-height: 2;
-  --bs-body-color: #212529;
-  --bs-body-bg: #f4f4f4;
+  --devsu-font-montserrat: Montserrat-Regular ,sans-serif;
+  --devsu-body-font-family: var(--devsu-font-montserrat);
+  --devsu-body-font-size: 2rem;
+  --devsu-body-font-weight: 400;
+  --devsu-body-line-height: 2;
+  --devsu-body-color: #212529;
+  --devsu-body-bg: #f4f4f4;
 }
 
 body {
   margin: 0;
   height: 100%;
-  font-family: var(--bs-body-font-family);
-  font-size: var(--bs-body-font-size);
-  font-weight: var(--bs-body-font-weight);
-  line-height: var(--bs-body-line-height);
-  color: var(--bs-body-color);
-  text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  font-family: var(--devsu-body-font-family);
+  font-size: var(--devsu-body-font-size);
+  font-weight: var(--devsu-body-font-weight);
+  line-height: var(--devsu-body-line-height);
+  color: var(--devsu-body-color);
+  text-align: var(--devsu-body-text-align);
+  background-color: var(--devsu-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   
   
+}
+
+button {
+  padding: 2rem 4.5rem;
+  width: 20rem;
+  justify-content: center;
+  color: #0f265c;
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 2rem;
+  font-family: Montserrat-SemiBold;
+}
+.button-primary{
+  background-color: #ffdd00;
+}
+.button-primary:hover {
+  background-color: #ffcd39;
+}
+.button-primary:disabled {
+  background-color: #ffe69d;
+}
+.button-secondary {
+  background-color: #e8dede;
+}
+.button-secondary:hover {
+  background-color: #cccccc;
+}
+
+@media only screen and (max-width: 767px) {
+  :root {
+    --devsu-body-font-size: 1.5rem;
+    --devsu-body-font-weight: 300;
+    --devsu-body-line-height: 2;
+  }
+
+  button {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 2.5rem;
+    width: 12rem;
+    font-size: 1.5rem;
+  }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  button {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem 2rem;
+    width: 13rem;
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  button {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 3rem;
+    width: 15rem;
+    font-size: 2rem;
+  }
 }

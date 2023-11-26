@@ -6,6 +6,7 @@ import { CreateProductComponent } from './views/create-product/create-product.co
 const routes: Routes = [
   { path: '', component: TransactionsComponent },
   { path: 'create-product', component: CreateProductComponent },
+  { path: 'update-product/:productId', component: CreateProductComponent },
   { path: '**', redirectTo:'' },
 ];
 

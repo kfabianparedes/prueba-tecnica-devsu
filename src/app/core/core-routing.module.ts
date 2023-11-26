@@ -3,16 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { CoreComponent } from './core.component';
 
 const routes: Routes = [
-  { 
-    path:'', 
-    component:CoreComponent, 
-    children:[
-      { path:'home', loadChildren: () => import('./modules/transactions/transactions.module').then( m => m.TransactionsModule )},
-      { path:'', redirectTo:'home', pathMatch:'full'},
-      { path:'**', redirectTo:''}
-    ]
+  {
+    path: '',
+    component: CoreComponent,
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirección a la ruta por defecto bajo /home
+      { path: 'home', loadChildren: () => import('./modules/transactions/transactions.module').then((m) => m.TransactionsModule) },
+    ],
   },
-
 ];
 
 @NgModule({

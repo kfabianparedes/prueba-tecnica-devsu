@@ -1,10 +1,11 @@
 .table-container{
+  display: flex;
+  justify-content: center;
   width: 100%;
   padding: 5rem 0rem;
   margin: 0;
   background-color: #ffffff;
-  display: flex;
-  justify-content: center;
+  overflow-x: auto;
 }
 
 .table-container__content{
@@ -21,6 +22,7 @@
   height: 10rem;
   width: 33rem;
   vertical-align: middle; 
+  white-space: nowrap;
 }
 
 .content-header--center{
@@ -33,16 +35,93 @@
   height: 10rem;
   width: 33rem;
   vertical-align: middle; 
+  white-space: nowrap;
 }
-.content-body--center {
-  text-align: center;
+
+.content-header-th , .content-body-td{
+  padding: 0 2rem;
 }
-.content-body-td--options{
-  text-align: center;
-  cursor: pointer;
-  font-size: 2rem;
-}
+
 .logo-img {
   margin-top: 1rem;
   height: 10rem;
+}
+
+.content-body--center {
+  text-align: center;
+}
+
+.content-body-td--options {
+  display: inline-block;
+  text-align: center;
+  font-size: 3rem;
+  position: relative;
+  padding-right: 15rem;
+}
+
+.options-trigger {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.options-trigger span {
+  display: inline-block;
+  padding: 0 2.5rem;
+}
+
+.options-trigger:hover span,
+.options-trigger:focus span {
+  background-color: #f4f4f4;
+  border-radius: 50%;
+}
+
+.options-container {
+  position: absolute;
+  background-color: white;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.5rem;
+  z-index: 1;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2rem;
+}
+.options-container div {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.options-container div:hover {
+  background-color: #f4f4f4;
+}
+
+@media only screen and (max-width: 767px) {
+  .table-container{
+    justify-content: flex-start;
+  }
+
+  .options-container {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .table-container{
+    justify-content: flex-start;
+  }
+  .options-container {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  .table-container{
+    justify-content: flex-start;
+  }
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1919px) {
+  .table-container{
+    justify-content: flex-start;
+  }
 }

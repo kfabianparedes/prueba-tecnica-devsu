@@ -1,0 +1,60 @@
+.modal-body{
+  font-size: 3rem;
+  padding: 3.5rem;
+}
+.modal-body strong{
+  padding-right: 3rem;  
+}
+.modal-footer{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 767px) {
+  .modal-body{
+    font-size: 1.7rem;
+    padding: 0 4rem;
+  }
+  .modal-body strong{
+    padding-right: 0.5rem;  
+  }
+
+  .modal-footer button {
+    margin-bottom: 1rem; 
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .modal-body{
+    padding: 3rem;
+    font-size: 1.7rem;
+  }
+
+  .modal-body strong{
+    padding-right: 0.5rem;  
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  .modal-body{
+    padding: 0 3rem;
+    font-size: 2rem;
+  }
+
+  .modal-body strong{
+    padding-right: 0.5rem;  
+  }
+
+  .modal-footer{
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1919px) {
+  
+}
+
+@media only screen and (min-width: 2560px) {
+  
+}

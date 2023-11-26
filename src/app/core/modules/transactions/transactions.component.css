@@ -6,3 +6,51 @@
 .container-transaction__footer{
   padding: 0 25rem;
 }
+
+@media only screen and (max-width: 767px) {
+  .container-transaction__header,
+  .container-transaction__content, 
+  .container-transaction__footer{
+    padding: 0 2rem;
+  }
+  .container-transaction__footer{
+    padding: 0rem 2rem 5rem 2rem; 
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .container-transaction__header,
+  .container-transaction__content, 
+  .container-transaction__footer{
+    padding: 0 2rem;
+  }
+
+  .container-transaction__footer{
+    padding: 0rem 2rem 5rem 2rem; 
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .container-transaction__header,
+  .container-transaction__content, 
+  .container-transaction__footer{
+    padding: 0 5rem;
+  }
+
+  .container-transaction__footer{
+    padding: 0rem 5rem 5rem 5rem; 
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container-transaction__footer{
+    padding: 0rem 5rem 5rem 5rem; 
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .container-transaction__header,
+  .container-transaction__content, 
+  .container-transaction__footer{
+    padding: 0 25rem;
+  }
+  
+}

@@ -4,6 +4,7 @@ import { Product } from './models/product.model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { QUANTITY_OPTIONS } from '../../../shared/models/global';
+import { EventService } from './services/event.service';
 
 @Component({
   selector: 'app-transactions',
@@ -14,11 +15,21 @@ export class TransactionsComponent implements OnInit, OnDestroy {
   public products: Product[] = [];
   public displayedProducts: Product[] = [];
   public searchProductByName: string = '';
-  constructor(private productImplementService: ProductImplementService) { }
+  constructor(
+    private productImplementService: ProductImplementService,
+    private _eventService: EventService
+    ) { }
 
   private subscriptions: Subscription[] = [];
 
   ngOnInit(): void {
+    /* 
+      * Suscribirse al evento closeModalEvent$ cuando se haya eleminado un producto
+        y ejecutar this.getProducts() cuando ocurra.
+    */
+    const closeModalSubscription = this._eventService.closeModalEvent$.subscribe(() => this.getProducts());
+    this.subscriptions.push(closeModalSubscription);
+    // Obtener productos inicialmente al cargar el componente.
     this.getProducts();
   }
 

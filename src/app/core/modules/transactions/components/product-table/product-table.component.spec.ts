@@ -3,6 +3,8 @@ import { ProductTableComponent } from './product-table.component';
 import { FilterTablePipe } from '../../pipes/filter-table.pipe';
 import { Product } from '../../models/product.model';
 import { By } from '@angular/platform-browser';
+import { ProductFormService } from '../../services/product-form.service';
+import { FormBuilder } from '@angular/forms';
 
 describe('ProductTableComponent', ()=>{
   let component : ProductTableComponent;
@@ -11,6 +13,7 @@ describe('ProductTableComponent', ()=>{
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ProductTableComponent,FilterTablePipe],
+      providers: [ProductFormService, FormBuilder]
     })
     .compileComponents();
   });

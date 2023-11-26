@@ -27,7 +27,7 @@ export class ProductClientService {
 
   public deleteProduct$(param: string): Observable<string> {
     const httpParams = new HttpParams().set("id", param);
-    return this.genericService.genericDelete<string>(ENDPOINTS.PRODUCT,httpParams);
+    return this.genericService.genericDelete<string>(ENDPOINTS.PRODUCT,httpParams,'text');
   }
 
   public validateProductID$(param: string): Observable<boolean> {
