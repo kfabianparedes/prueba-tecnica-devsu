@@ -1,8 +1,8 @@
 import { FormControl, Validators } from '@angular/forms';
 import { getEnableErrorMessages, getErrorbyFormControl } from '../helpers/error-controls-helpers';
 import { GenericValidator } from '../helpers/generic-validator';
-import { CONFIG_PRODUCT_VALIDATIONS } from '../models/global';
-import { DESCRIPTION_ERROR_MESSAGES } from '../helpers/global-error-message';
+import { CONFIG_PRODUCT_VALIDATIONS } from '../parameters/global';
+import { DESCRIPTION_ERROR_MESSAGES } from '../parameters/global-error-message';
 
 export class DescriptionControl extends FormControl {
 

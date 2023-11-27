@@ -1,6 +1,6 @@
 import { FormControl, Validators } from '@angular/forms';
 import { GenericValidator } from '../helpers/generic-validator';
-import { RELEASE_DATE_ERROR_MESSAGES } from '../helpers/global-error-message';
+import { RELEASE_DATE_ERROR_MESSAGES } from '../parameters/global-error-message';
 import { getEnableErrorMessages, getErrorbyFormControl } from '../helpers/error-controls-helpers';
 
 export class DateReleaseControl extends FormControl {

@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LimitTableComponent } from './limit-table.component';
-import { QUANTITY_OPTIONS } from '../../../../../shared/models/global';
+import { QUANTITY_OPTIONS } from '../../../../../shared/parameters/global';
 import { By } from '@angular/platform-browser';
 
 describe('LimitTableComponent', () => {

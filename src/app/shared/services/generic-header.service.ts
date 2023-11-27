@@ -1,6 +1,6 @@
 import { HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { HTTP_HEADERS } from "../models/global";
+import { HTTP_HEADERS } from "../parameters/global";
 
 @Injectable({
   providedIn: "root",

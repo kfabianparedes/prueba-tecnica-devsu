@@ -1,6 +1,6 @@
 import { FormControl, Validators } from '@angular/forms';
 import { getEnableErrorMessages, getErrorbyFormControl } from '../helpers/error-controls-helpers';
-import { LOGO_ERROR_MESSAGES } from '../helpers/global-error-message';
+import { LOGO_ERROR_MESSAGES } from '../parameters/global-error-message';
 
 export class LogoControl extends FormControl {
 

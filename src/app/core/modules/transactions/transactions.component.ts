@@ -3,7 +3,7 @@ import { ProductImplementService } from './services/product-implement.service';
 import { Product } from './models/product.model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
-import { QUANTITY_OPTIONS } from '../../../shared/models/global';
+import { QUANTITY_OPTIONS } from '../../../shared/parameters/global';
 import { EventService } from './services/event.service';
 
 @Component({

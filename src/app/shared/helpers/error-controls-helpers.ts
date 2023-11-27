@@ -1,5 +1,5 @@
 import { FormControl } from '@angular/forms';
-import { IControlErrorMessages } from './global-error-message';
+import { IControlErrorMessages } from '../parameters/global-error-message';
 
 export function getEnableErrorMessages(formControl: FormControl): boolean {
   const value = formControl.invalid && (formControl.touched || formControl.dirty);

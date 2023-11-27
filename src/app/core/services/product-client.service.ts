@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ENDPOINTS } from '../../shared/models/endpoints';
+import { ENDPOINTS } from '../../shared/parameters/endpoints';
 import { GenericService } from '../../shared/services/generic.service';
 import { ProductResponse } from '../models/product-response';
 import { Observable } from 'rxjs';

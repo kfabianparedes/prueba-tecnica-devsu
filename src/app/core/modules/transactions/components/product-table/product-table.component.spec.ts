@@ -5,6 +5,7 @@ import { Product } from '../../models/product.model';
 import { By } from '@angular/platform-browser';
 import { ProductFormService } from '../../services/product-form.service';
 import { FormBuilder } from '@angular/forms';
+import { LazyImgComponent } from '../../../../../shared/components/lazy-img/lazy-img.component';
 
 describe('ProductTableComponent', ()=>{
   let component : ProductTableComponent;
@@ -12,7 +13,7 @@ describe('ProductTableComponent', ()=>{
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductTableComponent,FilterTablePipe],
+      declarations: [ ProductTableComponent,FilterTablePipe, LazyImgComponent],
       providers: [ProductFormService, FormBuilder]
     })
     .compileComponents();

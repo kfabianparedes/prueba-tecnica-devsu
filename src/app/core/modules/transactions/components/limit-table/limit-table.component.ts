@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { QUANTITY_OPTIONS } from '../../../../../shared/models/global';
+import { QUANTITY_OPTIONS } from '../../../../../shared/parameters/global';
 
 
 @Component({

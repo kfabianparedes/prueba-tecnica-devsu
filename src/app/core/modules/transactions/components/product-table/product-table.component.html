@@ -9,7 +9,11 @@
       <th class="content-header-th"></th>
     </tr>
     <tr class="table-container__content_body" *ngFor="let product of products | filterTable: searchText">
-      <td class="content-body-td content-body--center"> <img class="logo-img" src="{{product?.logo}}" alt="product-logo"> </td>
+      <td class="content-body-td content-body--center"> 
+        <lazy-img [lazySrc]="product.logo">
+          <img #lazyImg class="logo-img" alt="product-logo"> 
+        </lazy-img>
+      </td>
       <td class="content-body-td">{{ product?.name }}</td>
       <td class="content-body-td">{{ product?.description }}</td>
       <td class="content-body-td">{{ product?.date_release | date:'dd/MM/yyyy' }}</td>
